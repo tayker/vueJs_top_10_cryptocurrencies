@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="cryptoInfoApp">
+        <div class="container">
+            <div class="crypto-info-wrapper">
+                <div class="title title--main">
+                    top 10 <br>cryptocurrencies
+                </div>
+                <div class="crypto-currencyes">
+                    <button class="button" 
+                       v-for="(item, index) in json" @click="setActiveClass('active', $event)" 
+                       v-bind:class="{'active': index === 0}">
+                        {{item.name}} ({{item.symbol}})
+                    </button>
+                </div>
+                <transition-group name="list" tag="p">
+                    <div class="crypto-data" 
+                       v-for="(item, index) in json" 
+                       v-if="index == currentElem"
+                       v-bind:key="index">
+                        <div class="crypto-data__price">
+                            <div class="title">
+                                Price USD
+                            </div>
+                            {{item.price_usd}}&#36;
+                        </div>
+                        <div class="crypto-data__percent">
+                            <div class="title">
+                                Percent change 1h
+                            </div>
+                            {{item.percent_change_1h}}&#37;
+                        </div>
+                        <div class="crypto-data__capitalization">
+                            <div class="title">
+                                Capitalization
+                            </div>
+                            {{item.market_cap_usd}}&#36;
+                        </div>
+                        <div class="crypto-data__indicator"
+                        v-bind:class="{growth: item.percent_change_1h > 0, decrease: item.percent_change_1h < 0}">
+
+                        </div>
+                    </div>
+                </transition-group>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

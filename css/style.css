@@ -1,0 +1,166 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.crypto-currencyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .crypto-currencyes .button {
+    cursor: pointer;
+    background-color: #ffb900;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    width: 200px;
+    text-align: left;
+    margin-bottom: 10px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    outline: none; }
+    .crypto-currencyes .button.active {
+      background-color: #ef5734;
+      position: relative; }
+      .crypto-currencyes .button.active:before {
+        content: "";
+        position: absolute;
+        background-color: #ef5734;
+        width: 20px;
+        height: 3px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        -webkit-animation: 0.2s activeBtnAnim forwards;
+                animation: 0.2s activeBtnAnim forwards; }
+
+@-webkit-keyframes activeBtnAnim {
+  from {
+    left: -100px; }
+  to {
+    left: -20px; } }
+
+@keyframes activeBtnAnim {
+  from {
+    left: -100px; }
+  to {
+    left: -20px; } }
+
+.crypto-info-wrapper {
+  max-width: 520px;
+  margin: auto;
+  border: 1px solid #666;
+  padding: 105px 15px 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #222222;
+  position: relative;
+  overflow: hidden; }
+  .crypto-info-wrapper .title--main {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: #fdca30;
+    font-size: 24px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    font-weight: bold; }
+
+.crypto-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 20px; }
+  .crypto-data__price, .crypto-data__percent, .crypto-data__capitalization {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #ffed00; }
+    .crypto-data__price .title, .crypto-data__percent .title, .crypto-data__capitalization .title {
+      color: #ef5734; }
+  .crypto-data__indicator {
+    width: 120px;
+    height: 120px;
+    background-size: cover; }
+    .crypto-data__indicator.growth {
+      background-image: url("../img/graph_growth.svg"); }
+    .crypto-data__indicator.decrease {
+      background-image: url("../img/graph_decrease.svg"); }
+
+.list-enter-active, .list-leave-active {
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+
+.list-enter, .list-leave-to {
+  opacity: 0; }
+
+.list-leave-to {
+  position: absolute; }
+
+.list-before-enter {
+  -webkit-transform: translatey(0);
+      -ms-transform: translatey(0);
+          transform: translatey(0); }
+
+.list-enter {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  position: absolute; }
+
+@media screen and (max-width: 530px) {
+  .crypto-currencyes {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .crypto-currencyes .button {
+      font-size: 16px;
+      width: 160px; }
+      .crypto-currencyes .button.active:nth-child(2n):before {
+        -webkit-animation: .2s activeBtnAnimAdaptive forwards;
+                animation: .2s activeBtnAnimAdaptive forwards; }
+  @-webkit-keyframes activeBtnAnimAdaptive {
+    from {
+      right: -100px; }
+    to {
+      right: -20px; } }
+  @keyframes activeBtnAnimAdaptive {
+    from {
+      right: -100px; }
+    to {
+      right: -20px; } }
+  .crypto-info-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; } }
+
+@media screen and (max-width: 410px) {
+  .crypto-currencyes .button {
+    width: 140px;
+    height: 60px; } }
+
+/*# sourceMappingURL=style.css.map */
